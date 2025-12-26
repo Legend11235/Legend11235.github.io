@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal Portfolio Template</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand" aria-label="Portfolio label">
+        <span class="prompt">&gt;</span> Sohum Guha<span class="caret" aria-hidden="true"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="content">
+    <section id="about" class="section">
+      <div class="section-heading"><span class="prompt">&gt;</span> about</div>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="intro">
+         Hello World! I'm Sohum Guha, a third year Computer Science undergraduate at McGill University. I'm passionate about machine learning, compilers, and exploring how technology can be leveraged to solve real world problems. When I'm not coding, you can find me on the field playing <a href="https://www.youtube.com/watch?v=9TsNznbVScc" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">soccer</a> or in my room, learning how to play the interstellar theme on my piano.
+      </p>
+      <div class="quick-info">
+        <h3 class="subhead">quick info</h3>
+        <ul>
+          <li><span class="label">location:</span> [city, country]</li>
+          <li><span class="label">interests:</span> [topics you enjoy]</li>
+          <li><span class="label">currently:</span> [what you are working on]</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-heading"><span class="prompt">&gt;</span> experience</div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="experience-list">
+        <article class="log-entry">
+          <header>
+            <h3>Role Title @ Org Name</h3>
+            <span class="meta">[Start — End]</span>
+          </header>
+          <ul>
+            <li>[bullet placeholder one]</li>
+            <li>[bullet placeholder two]</li>
+            <li>[bullet placeholder three]</li>
+          </ul>
+        </article>
+        <article class="log-entry">
+          <header>
+            <h3>Another Role @ Company</h3>
+            <span class="meta">[Start — End]</span>
+          </header>
+          <ul>
+            <li>[responsibility placeholder]</li>
+            <li>[impact placeholder]</li>
+            <li>[tech/stack placeholder]</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading"><span class="prompt">&gt;</span> projects</div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="project-grid">
+        <article class="card">
+          <h3>Project Name</h3>
+          <p>One-line description placeholder for the project.</p>
+          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
+        </article>
+        <article class="card">
+          <h3>Another Project</h3>
+          <p>Quick note describing what this project does.</p>
+          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
+        </article>
+        <article class="card">
+          <h3>Third Project</h3>
+          <p>Short summary of the problem and the solution.</p>
+          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="section">
+      <div class="section-heading"><span class="prompt">&gt;</span> blog</div>
+      <div class="divider" aria-hidden="true"></div>
+      <ul class="blog-list">
+        <li>
+          <button type="button" class="blog-open" data-title="Post Title One" data-date="[YYYY-MM-DD]" data-content="Placeholder full post content. Write your long-form thoughts here.">
+            <span class="post-title">Post Title One</span>
+            <span class="post-date">[YYYY-MM-DD]</span>
+            <span class="post-excerpt">One-line excerpt placeholder for this post.</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="blog-open" data-title="Second Post" data-date="[YYYY-MM-DD]" data-content="Longer placeholder body for the second post.">
+            <span class="post-title">Second Post</span>
+            <span class="post-date">[YYYY-MM-DD]</span>
+            <span class="post-excerpt">Quick teaser text goes here.</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="blog-open" data-title="Third Post" data-date="[YYYY-MM-DD]" data-content="More placeholder writing for another article.">
+            <span class="post-title">Third Post</span>
+            <span class="post-date">[YYYY-MM-DD]</span>
+            <span class="post-excerpt">Another single-line placeholder summary.</span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-heading"><span class="prompt">&gt;</span> contact</div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="contact-block">
+        <p><span class="label">email:</span> [you@example.com]</p>
+        <p><span class="label">github:</span> [github.com/your-handle]</p>
+        <p><span class="label">linkedin:</span> [linkedin.com/in/your-handle]</p>
+      </div>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">name</label>
+          <input id="name" name="name" type="text" placeholder="your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="message">message</label>
+          <textarea id="message" name="message" rows="4" placeholder="your note" required></textarea>
+        </div>
+        <div class="form-row checkbox-row">
+          <input id="human" type="checkbox" required>
+          <label for="human">human check (please confirm)</label>
+        </div>
+        <button type="submit" class="submit">queue message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-content">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Close blog post">&times;</button>
+      <p class="modal-meta" id="modal-date"></p>
+      <h2 class="modal-title" id="modal-title">Post title</h2>
+      <div class="modal-content" id="modal-content">
+        <p>Placeholder post body.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
