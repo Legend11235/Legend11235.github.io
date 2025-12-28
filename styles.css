@@ -79,7 +79,7 @@ button:hover {
 .nav {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.2rem 1.6rem 1.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -118,11 +118,43 @@ button:hover {
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links .resume-item {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.35rem;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  text-transform: lowercase;
+  font-weight: 700;
+  line-height: 1.2;
+  background: transparent;
+  color: #e6e6e6;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.resume-link:hover,
+.resume-link:focus-visible {
+  border-bottom-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-1px);
+  outline: none;
 }
 
 .nav-links a.active {
@@ -337,57 +369,6 @@ button:hover {
   gap: 0.35rem;
 }
 
-.contact-form {
-  border: 1px solid #1f1f1f;
-  padding: 1rem;
-  display: grid;
-  gap: 0.75rem;
-}
-
-.form-row {
-  display: grid;
-  gap: 0.35rem;
-}
-
-label {
-  color: #cfcfcf;
-}
-
-input,
-textarea {
-  background: #0b0b0b;
-  color: #e6e6e6;
-  border: 1px solid #1f1f1f;
-  padding: 0.5rem;
-  font: inherit;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #777;
-}
-
-.checkbox-row {
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.submit {
-  background: transparent;
-  color: #e6e6e6;
-  border: 1px solid #e6e6e6;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font: inherit;
-  text-transform: lowercase;
-}
-
-.form-status {
-  min-height: 1.2em;
-  color: #cfcfcf;
-  margin: 0;
-}
 
 .modal {
   position: fixed;

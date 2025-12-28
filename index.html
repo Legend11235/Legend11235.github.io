@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminal Portfolio Template</title>
+  <title>Sohum Guha Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
@@ -21,6 +21,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#me">Me</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="resume-item"><a class="resume-link" href="SohumGuhaReccomendationLetter2025.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
     </nav>
   </header>
@@ -77,24 +78,29 @@
       <div class="divider" aria-hidden="true"></div>
       <div class="project-grid">
         <article class="card">
-          <h3>FlowState</h3>
-          <p>Focus companion that turns a task list into flow sessions with AI summaries and gentle break nudges.</p>
-          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
-        </article>
-        <article class="card">
-          <h3>Risk-RAG Copilot</h3>
-          <p>Retrieval + LLM assistant that drafts RCA outlines and incident briefs for ops teams.</p>
-          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
-        </article>
-        <article class="card">
           <h3>FPL Optimizer</h3>
-          <p>Data + ML pipeline that suggests Fantasy Premier League lineups with transparent reasoning.</p>
-          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
+          <p>Machine learning–powered optimizer for Fantasy Premier League. Trained on 200k+ scraped match logs with extensive feature engineering and XGBoost modeling (spike-aware for high-variance players).</p>
+          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/fpl_optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
         </article>
         <article class="card">
           <h3>Transformer From Scratch</h3>
           <p>Implemented <a class="underline-link" href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf" target="_blank" rel="noopener noreferrer"><em>Attention is All You Need</em></a> in PyTorch from scratch.</p>
-          <p class="links">Links: <a href="#" aria-label="GitHub link placeholder">[GitHub]</a> <a href="#" aria-label="Live link placeholder">[Live]</a></p>
+          <p class="links">Links: <a class="underline-link" href="#" aria-label="GitHub link placeholder">[GitHub]</a></p>
+        </article>
+        <article class="card">
+          <h3>Equity Portfolio Optimizer</h3>
+          <p>ML-driven equity portfolio construction: signals from market data + 10-K text, with weight optimization under real constraints.</p>
+          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/equity-portfolio-optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+        </article>
+        <article class="card">
+          <h3>Risk-RAG Copilot</h3>
+          <p>Retrieval + LLM assistant that drafts RCA outlines and incident briefs for ops teams.</p>
+          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/risk-rag-copilot" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+        </article>
+        <article class="card">
+          <h3>FlowState</h3>
+          <p>Pomodoro-style focus app that uses your webcam to detect distraction, track attention during sessions, and surface insights on when focus drops.</p>
+          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/FlowState" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
         </article>
       </div>
     </section>
@@ -134,26 +140,6 @@
         <p><span class="label">github:</span> <a class="underline-link" href="https://github.com/Legend11235" target="_blank" rel="noopener noreferrer">github.com/Legend11235</a></p>
         <p><span class="label">linkedin:</span> <a class="underline-link" href="https://www.linkedin.com/in/sohum-guha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sohum-guha/</a></p>
       </div>
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-row">
-          <label for="name">name</label>
-          <input id="name" name="name" type="text" placeholder="your name" required>
-        </div>
-        <div class="form-row">
-          <label for="email">email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required>
-        </div>
-        <div class="form-row">
-          <label for="message">message</label>
-          <textarea id="message" name="message" rows="4" placeholder="your note" required></textarea>
-        </div>
-        <div class="form-row checkbox-row">
-          <input id="human" type="checkbox" required>
-          <label for="human">human check (please confirm)</label>
-        </div>
-        <button type="submit" class="submit">queue message</button>
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-      </form>
     </section>
   </main>
 

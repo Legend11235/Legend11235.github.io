@@ -1,55 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupActiveSectionIndicator();
-  setupContactForm();
   setupAsciiHint();
 });
 
 function setupActiveSectionIndicator() {
-  const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-  if (!navLinks.length || !('IntersectionObserver' in window)) return;
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a'))
+    .filter(link => link.getAttribute('href')?.startsWith('#'));
+  if (!navLinks.length) return;
 
   const sections = navLinks
-    .map(link => document.querySelector(link.getAttribute('href')))
+    .map(link => {
+      const target = document.querySelector(link.getAttribute('href'));
+      return target ? { link, target } : null;
+    })
     .filter(Boolean);
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        const link = navLinks.find(a => a.getAttribute('href') === `#${id}`);
-        if (!link) return;
-        if (entry.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
+  const setActive = activeLink => {
+    navLinks.forEach(a => a.classList.remove('active'));
+    if (activeLink) activeLink.classList.add('active');
+  };
+
+  let ticking = false;
+  const handleScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const scrollPos = window.scrollY + 180;
+      let current = sections[0];
+      sections.forEach(item => {
+        const rect = item.target.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        if (top <= scrollPos) {
+          current = item;
         }
       });
-    },
-    { threshold: 0.55 }
-  );
+      setActive(current?.link);
+      ticking = false;
+    });
+  };
 
-  sections.forEach(section => observer.observe(section));
-}
-
-function setupContactForm() {
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  const human = document.getElementById('human');
-  if (!form || !status || !human) return;
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    status.textContent = '';
-    if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
-      status.textContent = 'please complete the required fields.';
-      return;
-    }
-    if (!human.checked) {
-      status.textContent = 'please confirm the human check.';
-      return;
-    }
-    status.textContent = 'message queued (demo)';
-    form.reset();
-  });
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
+  handleScroll();
 }
 
 function setupAsciiHint() {
