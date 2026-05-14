@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupActiveSectionIndicator();
   setupAsciiHint();
+  setupProjectCardReveal();
 });
 
 function setupActiveSectionIndicator() {
@@ -25,6 +26,14 @@ function setupActiveSectionIndicator() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
+      const bottomOffset = 8;
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - bottomOffset;
+      if (isAtBottom) {
+        setActive(sections[sections.length - 1]?.link);
+        ticking = false;
+        return;
+      }
+
       const scrollPos = window.scrollY + 180;
       let current = sections[0];
       sections.forEach(item => {
@@ -72,4 +81,30 @@ function setupAsciiHint() {
   asciiLink.addEventListener('mousemove', moveHint);
   asciiLink.addEventListener('focus', showHint);
   asciiLink.addEventListener('blur', hideHint);
+}
+
+function setupProjectCardReveal() {
+  const cards = Array.from(document.querySelectorAll('.card'));
+  if (!cards.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    cards.forEach(card => card.classList.add('is-visible'));
+    return;
+  }
+
+  cards.forEach(card => card.classList.add('is-reveal-ready'));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  cards.forEach(card => observer.observe(card));
 }

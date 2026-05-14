@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sohum Guha Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script src="main.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#me">Me</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="resume-item"><a class="resume-link" href="SohumGuha_Aug2025Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li class="resume-item"><a class="resume-link" href="mailto:sohum.guha@mail.mcgill.ca?subject=Request%20access%20to%20resume&body=Hi%20Sohum%2C%0A%0AI%27d%20like%20to%20request%20access%20to%20your%20resume.%0A%0AThanks%2C">Resume</a></li>
       </ul>
     </nav>
   </header>
@@ -49,13 +49,24 @@
       <div class="experience-list">
         <article class="log-entry">
           <header>
+            <h3>Delivery Consultant Intern, Data &amp; AI @ IBM</h3>
+            <span class="meta">May 2026 — Aug 2026</span>
+          </header>
+          <ul>
+            <li><a class="underline-link" href="https://www.ibm.com/products/expertlabs" target="_blank" rel="noopener noreferrer">IBM Technology Expert Labs</a>; Markham, ON</li>
+            <li>Working on AI-agent orchestration and workflow automation systems using the Watsonx Orchestrate SDK.</li>
+          </ul>
+        </article>
+
+        <article class="log-entry">
+          <header>
             <h3>Undergraduate Research Assistant @ McGill University</h3>
             <span class="meta">May 2025 — Sep 2025</span>
           </header>
           <ul>
             <li><a class="underline-link" href="https://www.swamylab.com/" target="_blank" rel="noopener noreferrer">Krishnaswamy Lab</a>; supervised by Dr. Krishnaswamy and Dr. Cook</li>
             <li>Built an automated neuroscience pipeline turning terabytes of multimodal data into clean results.</li>
-            <li><a class="underline-link" href="SohumGuhaReccomendationLetter2025.pdf" target="_blank" rel="noopener noreferrer">Recommendation Letter</a></li>
+            <li><a class="underline-link" href="mailto:sohum.guha@mail.mcgill.ca?subject=Request%20access%20to%20recommendation%20letter&body=Hi%20Sohum%2C%0A%0AI%27d%20like%20to%20request%20access%20to%20your%20recommendation%20letter.%0A%0AThanks%2C">Recommendation Letter</a></li>
           </ul>
         </article>
 
@@ -76,32 +87,53 @@
     <section id="projects" class="section">
       <div class="section-heading"><span class="prompt">&gt;</span> projects</div>
       <div class="divider" aria-hidden="true"></div>
-      <div class="project-grid">
-        <article class="card">
-          <h3>FPL Optimizer</h3>
-          <p>Machine learning–powered optimizer for Fantasy Premier League. Trained on 200k+ scraped match logs with extensive feature engineering and XGBoost modeling (spike-aware for high-variance players).</p>
-          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/fpl_optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
-        </article>
-        <article class="card">
-          <h3>Transformer From Scratch</h3>
-          <p>Implemented <a class="underline-link" href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf" target="_blank" rel="noopener noreferrer"><em>Attention is All You Need</em></a> in PyTorch from scratch.</p>
-          <p class="links">Links: <a class="underline-link" href="#" aria-label="GitHub link placeholder">[GitHub]</a></p>
-        </article>
-        <article class="card">
-          <h3>Equity Portfolio Optimizer</h3>
-          <p>ML-driven equity portfolio construction: signals from market data + 10-K text, with weight optimization under real constraints.</p>
-          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/equity-portfolio-optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
-        </article>
-        <article class="card">
-          <h3>Risk-RAG Copilot</h3>
-          <p>Retrieval + LLM assistant that drafts RCA outlines and incident briefs for ops teams.</p>
-          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/risk-rag-copilot" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
-        </article>
-        <article class="card">
-          <h3>FlowState</h3>
-          <p>Pomodoro-style focus app that uses your webcam to detect distraction, track attention during sessions, and surface insights on when focus drops.</p>
-          <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/FlowState" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
-        </article>
+      <div class="project-group">
+        <div class="section-heading project-subheading"><span class="prompt">&gt;&gt;</span> systems &amp; compilers</div>
+        <div class="project-grid">
+          <article class="card">
+            <header class="card-header">
+              <h3>Tensor Expression Compiler</h3>
+              <span class="tag">In Development</span>
+            </header>
+            <p>Building a C++ compiler for a custom tensor expression language, implementing lexing, recursive-descent parsing, typed IR, and optimization passes including operator fusion and loop tiling. Targeting LLVM IR codegen and a multithreaded batched runtime.</p>
+            <p class="links">Links: <a class="underline-link" href="mailto:sohum.guha@mail.mcgill.ca?subject=Request%20access%20to%20Tensor%20Expression%20Compiler%20repo&body=Hi%20Sohum%2C%0A%0AI%27d%20like%20to%20request%20access%20to%20the%20Tensor%20Expression%20Compiler%20GitHub%20repository.%0A%0AThanks%2C" aria-label="Request Tensor Expression Compiler GitHub repository access by email">[GitHub]</a></p>
+          </article>
+          <article class="card">
+            <h3>Mini-C Compiler</h3>
+            <p>Multi-phase compiler in Java for a subset of C, featuring recursive-descent parsing, semantic analysis passes, MIPS32 code generation, and a graph-colouring register allocator with liveness analysis and interference graphs.</p>
+            <p class="links"><a class="underline-link" href="mailto:sohum.guha@mail.mcgill.ca?subject=Discuss%20Mini-C%20Compiler%20project&body=Hi%20Sohum%2C%0A%0AI%27d%20like%20to%20discuss%20the%20Mini-C%20Compiler%20project%20further.%0A%0AThanks%2C" aria-label="Email Sohum to discuss the Mini-C Compiler project further">Contact me to discuss further</a></p>
+          </article>
+        </div>
+      </div>
+      <div class="project-group">
+        <div class="section-heading project-subheading"><span class="prompt">&gt;&gt;</span> machine learning</div>
+        <div class="project-grid">
+          <article class="card">
+            <h3>FPL Optimizer</h3>
+            <p>Machine learning–powered optimizer for Fantasy Premier League. Trained on 200k+ scraped match logs with extensive feature engineering and XGBoost modeling (spike-aware for high-variance players).</p>
+            <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/fpl_optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+          </article>
+          <article class="card">
+            <h3>Transformer From Scratch</h3>
+            <p>Implemented <a class="underline-link" href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf" target="_blank" rel="noopener noreferrer"><em>Attention is All You Need</em></a> in PyTorch from scratch.</p>
+            <p class="links">Links: <a class="underline-link" href="#" aria-label="GitHub link placeholder">[GitHub]</a></p>
+          </article>
+          <article class="card">
+            <h3>Equity Portfolio Optimizer</h3>
+            <p>ML-driven equity portfolio construction: signals from market data + 10-K text, with weight optimization under real constraints.</p>
+            <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/equity-portfolio-optimizer" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+          </article>
+          <article class="card">
+            <h3>Risk-RAG Copilot</h3>
+            <p>Retrieval + LLM assistant that drafts RCA outlines and incident briefs for ops teams.</p>
+            <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/risk-rag-copilot" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+          </article>
+          <article class="card">
+            <h3>FlowState</h3>
+            <p>Pomodoro-style focus app that uses your webcam to detect distraction, track attention during sessions, and surface insights on when focus drops.</p>
+            <p class="links">Links: <a class="underline-link" href="https://github.com/Legend11235/FlowState" target="_blank" rel="noopener noreferrer" aria-label="GitHub link">[GitHub]</a></p>
+          </article>
+        </div>
       </div>
     </section>
 

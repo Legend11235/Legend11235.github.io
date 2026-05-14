@@ -1,6 +1,8 @@
 /* Base layout */
 :root {
   color-scheme: dark;
+  --terminal-green: #65ff8f;
+  --terminal-green-soft: rgba(101, 255, 143, 0.18);
 }
 
 *,
@@ -45,11 +47,11 @@ a.underline-link {
 
 a:hover,
 button:hover {
-  color: #ffffff;
+  color: var(--terminal-green);
 }
 
 :focus-visible {
-  outline: 2px solid #e6e6e6;
+  outline: 2px solid var(--terminal-green);
   outline-offset: 2px;
 }
 
@@ -61,7 +63,7 @@ button:hover {
   background: #e6e6e6;
   color: #0b0b0b;
   text-decoration: none;
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--terminal-green);
 }
 
 .skip-link:focus {
@@ -73,7 +75,7 @@ button:hover {
   top: 0;
   z-index: 10;
   background: #0b0b0b;
-  border-bottom: 1px solid #1f1f1f;
+  border-bottom: 1px solid rgba(101, 255, 143, 0.22);
 }
 
 .nav {
@@ -97,14 +99,14 @@ button:hover {
 .caret {
   width: 8px;
   display: inline-block;
-  background: #e6e6e6;
+  background: var(--terminal-green);
   animation: caret-blink 1s steps(1, end) infinite;
   margin-left: 2px;
 }
 
 @keyframes caret-blink {
   0%, 50% {
-    background: #e6e6e6;
+    background: var(--terminal-green);
   }
   50.01%, 100% {
     background: transparent;
@@ -151,14 +153,15 @@ button:hover {
 
 .resume-link:hover,
 .resume-link:focus-visible {
-  border-bottom-color: #ffffff;
-  color: #ffffff;
+  border-bottom-color: var(--terminal-green);
+  color: var(--terminal-green);
   transform: translateY(-1px);
   outline: none;
 }
 
 .nav-links a.active {
-  border-color: #e6e6e6;
+  border-color: var(--terminal-green);
+  color: var(--terminal-green);
 }
 
 .content {
@@ -169,7 +172,7 @@ button:hover {
 
 .section {
   padding: 2rem 0;
-  border-bottom: 1px solid #1f1f1f;
+  border-bottom: 1px solid rgba(101, 255, 143, 0.16);
   scroll-margin-top: 80px;
 }
 
@@ -179,16 +182,19 @@ button:hover {
   gap: 0.5rem;
   text-transform: lowercase;
   letter-spacing: 0.05em;
+  color: #e6e6e6;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .prompt {
-  color: #bfbfbf;
+  color: var(--terminal-green);
 }
 
 .divider {
   margin: 0.5rem 0 1.5rem;
   height: 1px;
-  background: #1f1f1f;
+  background: rgba(101, 255, 143, 0.18);
 }
 
 .intro {
@@ -213,7 +219,8 @@ button:hover {
 
 .ascii-link:hover,
 .ascii-link:focus-visible {
-  border-color: #ffffff;
+  border-color: var(--terminal-green);
+  box-shadow: 0 0 18px var(--terminal-green-soft);
   outline: none;
 }
 
@@ -222,7 +229,7 @@ button:hover {
   pointer-events: none;
   background: #0b0b0b;
   color: #e6e6e6;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--terminal-green);
   padding: 4px 8px;
   font-size: 0.8rem;
   border-radius: 4px;
@@ -239,7 +246,7 @@ button:hover {
   margin: 0 0 0.5rem;
   text-transform: lowercase;
   font-size: 0.95rem;
-  color: #cfcfcf;
+  color: var(--terminal-green);
 }
 
 .quick-info ul {
@@ -251,7 +258,7 @@ button:hover {
 }
 
 .label {
-  color: #bfbfbf;
+  color: var(--terminal-green);
   margin-right: 0.5rem;
 }
 
@@ -263,12 +270,13 @@ button:hover {
 .log-entry {
   border: 1px solid #1f1f1f;
   padding: 1rem;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .log-entry:hover,
 .log-entry:focus-within {
-  border-color: #ffffff;
+  border-color: var(--terminal-green);
+  box-shadow: 0 0 18px var(--terminal-green-soft);
 }
 
 .log-entry header {
@@ -297,6 +305,23 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
+  padding-top: 1.5rem;
+}
+
+.project-group {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.project-group + .project-group {
+  margin-top: 2rem;
+}
+
+.project-subheading {
+  color: var(--terminal-green);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
 }
 
 .card {
@@ -305,19 +330,53 @@ button:hover {
   display: grid;
   gap: 0.75rem;
   min-height: 220px;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  will-change: transform;
+  opacity: 1;
+  transform: translateY(0);
+  transform-origin: center top;
+  transition: opacity 0.45s ease, border-color 0.15s ease, transform 0.45s ease, box-shadow 0.15s ease;
+  will-change: opacity, transform;
+}
+
+.card.is-reveal-ready:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover,
 .card:focus-within {
-  border-color: #ffffff;
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  border-color: var(--terminal-green);
+  transform: scale(1.01);
+  box-shadow: 0 0 18px var(--terminal-green-soft), 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.card.is-visible:hover,
+.card.is-visible:focus-within {
+  transform: scale(1.01);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .card h3 {
   margin: 0;
+}
+
+.tag {
+  border: 1px solid var(--terminal-green);
+  color: var(--terminal-green);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  padding: 0.15rem 0.35rem;
+  white-space: nowrap;
 }
 
 .card .links a {
@@ -348,6 +407,12 @@ button:hover {
   gap: 0.3rem;
 }
 
+.blog-open:hover,
+.blog-open:focus-visible {
+  border-color: var(--terminal-green);
+  box-shadow: 0 0 18px var(--terminal-green-soft);
+}
+
 .blog-open .post-title {
   font-weight: 600;
 }
@@ -367,8 +432,14 @@ button:hover {
   margin-bottom: 1rem;
   display: grid;
   gap: 0.35rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+.contact-block:hover,
+.contact-block:focus-within {
+  border-color: var(--terminal-green);
+  box-shadow: 0 0 18px var(--terminal-green-soft);
+}
 
 .modal {
   position: fixed;
@@ -395,7 +466,7 @@ button:hover {
 .modal-card {
   position: relative;
   background: #0b0b0b;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--terminal-green);
   padding: 1.5rem;
   max-width: 720px;
   width: min(720px, 90vw);
@@ -412,7 +483,7 @@ button:hover {
   right: 0.5rem;
   background: transparent;
   color: #e6e6e6;
-  border: 1px solid #1f1f1f;
+  border: 1px solid var(--terminal-green);
   width: 2rem;
   height: 2rem;
   font-size: 1.2rem;
